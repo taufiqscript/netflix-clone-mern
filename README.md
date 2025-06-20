@@ -1,12 +1,50 @@
-# React + Vite
+# 🎬 Netflix Clone - MERN Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Netflix-inspired movie streaming application built with the MERN stack. This project includes essential streaming app features such as authentication, browsing movies, watching trailers, and managing favorites.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 User Authentication (Login & Register)
+- 🎥 Browse Movies & TV Shows (TMDB API)
+- ⭐ Add/Remove from Favorites
+- 📺 Watch Trailers via YouTube
+- 🌙 Responsive UI with TailwindCSS
+- 📁 Environment Config via `.env` (not included in repo)
 
-## Expanding the ESLint configuration
+## 🧰 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React.js, TailwindCSS, Vite
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: Firebase / JWT (optional)
+- **API**: TMDB (The Movie Database), YouTube API
+
+## 📸 Screenshots
+
+> *Tambahkan screenshot di sini setelah deploy*
+
+## 🌐 Live Demo
+
+🔗 [https://netflix-clone-demo.vercel.app](https://netflix-clone-demo.vercel.app)  
+*(Silakan update setelah deploy)*
+
+## 🧑‍💻 Author
+- GitHub: [@taufiqscript](https://github.com/taufiqscript)
+- LinkedIn: [linkedin.com/in/taufiqurrahman](#)
+
+## 📦 Installation (Local Setup)
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/taufiqscript/netflix-clone-mern.git
+cd netflix-clone-mern
+
+# 2. Install dependencies
+npm install
+
+# 3. Create .env file
+# Add TMDB_API_KEY, backend URL, etc.
+
+# 4. Run the app
+npm run dev
+
