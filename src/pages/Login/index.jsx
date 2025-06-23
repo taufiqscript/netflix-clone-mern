@@ -27,13 +27,7 @@ const Login = () => {
             if (login) {
                 const token = await getIdToken(login.user)
                 setTokenStorage(token)
-                setEmailStorage(login.user.email)
-                console.log("BASE_URL:", import.meta.env.VITE_BASE_URL_EXPRESS)
-                console.log("SEND TO BACKEND:", {
-                    email,
-                    password,
-                    token
-                })                  
+                setEmailStorage(login.user.email)                  
                 const user = await apiInstanceExpress.post("sign-in", {
                     email: email,
                     password,
