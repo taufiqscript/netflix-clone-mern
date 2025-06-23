@@ -12,8 +12,8 @@ import { useState } from 'react'
 const Login = () => {
     const navigate = useNavigate()
 
-    const [, setEmailStorage] = useAtom(emailStorageAtom)
-    const [, setTokenStorage] = useAtom(tokenStorageAtom)
+    const [emailStorage, setEmailStorage] = useAtom(emailStorageAtom)
+    const [tokenStorage, setTokenStorage] = useAtom(tokenStorageAtom)
 
     const [email, setEmail] = useAtom(emailAtom)
     const [password, setPassword] = useAtom(passwordAtom)
@@ -29,9 +29,9 @@ const Login = () => {
                 setTokenStorage(token)
                 setEmailStorage(login.user.email)                  
                 const user = await apiInstanceExpress.post("sign-in", {
-                    email: email,
+                    email: emailStorage,
                     password,
-                    token
+                    token: tokenStorage
                 })
 
                 if (user.status === 201) {
