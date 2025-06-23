@@ -31,8 +31,7 @@ const Login = () => {
                 setEmailStorage(login.user.email)                  
                 const user = await apiInstanceExpress.post("sign-in", {
                     email,
-                    password,
-                    token
+                    password
                 })
 
                 if (user.status === 201) {
