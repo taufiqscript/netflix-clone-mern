@@ -16,12 +16,3 @@ export const apiInstanceExpress = axios.create({
         "Content-Type": "application/json"
     }
 })
-
-// ✅ Tambahkan interceptor untuk otomatis kirim token Firebase
-apiInstanceExpress.interceptors.request.use((config) => {
-    const token = JSON.parse(localStorage.getItem('jotai/tokenStorageAtom')) // sesuaikan jika pakai sessionStorage
-    if (token) {
-        config.headers.Authorization = `Bearer ${token}`
-    }
-    return config
-})
