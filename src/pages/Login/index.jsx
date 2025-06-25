@@ -24,11 +24,14 @@ const Login = () => {
         e.preventDefault()
         try {
             const login = await signInWithEmailAndPassword(auth, email, password)
-            if (login) {
-                console.log(login)
-                const token = await getIdToken(login.user)
+            if (login && login.user) {
+                await new Promise(resolve => setTimeout(resolve, 500))
+                const token = await getIdToken(login.user, true)
+                console.log("🔥 Firebase ID Token:", token)
+
                 setTokenStorage(token)
-                setEmailStorage(login.user.email)                  
+                setEmailStorage(login.user.email)
+
                 const user = await apiInstanceExpress.post("/sign-in", {
                     email,
                     password,
@@ -43,12 +46,6 @@ const Login = () => {
                     }, 1000)
                 }
             }
-        } catch (error) {
-            alert(error)
-            return setLoading(false)
-        }
-
-    }
 
     return (
         <DefaultLayout>
