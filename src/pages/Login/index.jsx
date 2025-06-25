@@ -1,4 +1,4 @@
-import DefaultLayout from '../../components/layouts/DefaultLayout'
+// import DefaultLayout from '../../components/layouts/DefaultLayout'
 import { JUMBOTRON_IMAGE } from '../../constans/listAsset'
 import { GoChevronLeft } from 'react-icons/go'
 import { useNavigate } from 'react-router-dom'
@@ -57,7 +57,7 @@ const Login = () => {
     }
 
     return (
-        <DefaultLayout>
+        <>
             <div className='relative'>
                 <img src={JUMBOTRON_IMAGE}
                     className='relative w-full h-screen object-cover opacity-60'
@@ -113,7 +113,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-        </DefaultLayout>
+        </>
     )
 }
 
