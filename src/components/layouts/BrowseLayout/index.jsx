@@ -4,8 +4,6 @@ import { auth } from '../../../utils/firebase'
 import { useAtom } from 'jotai'
 import { emailStorageAtom, tokenStorageAtom } from '../../../jotai/atoms'
 import Loading from '../../modules/Loading/index'
-import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
 
 const BrowseLayout = ({ children, style }) => {
     const [user, loading, error] = useAuthState(auth)
@@ -13,17 +11,11 @@ const BrowseLayout = ({ children, style }) => {
     const [emailStorage] = useAtom(emailStorageAtom)
     const [tokenStorage] = useAtom(tokenStorageAtom)
 
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        if (!user && !emailStorage && !tokenStorage) {
-            navigate('/')
-        }
-    }, [])
-
     if (loading) return <Loading />
 
     if (error) return <p>Error!!!</p>
+
+    if (!user && !emailStorage && !tokenStorage) return location.replace('/')
 
     return (
         <div>
