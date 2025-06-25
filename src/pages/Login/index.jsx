@@ -48,8 +48,9 @@ const Login = () => {
             }
         } catch (error) {
             console.log(error)
+            setLoading(false)
         }
-
+    }
 
     return (
         <DefaultLayout>
