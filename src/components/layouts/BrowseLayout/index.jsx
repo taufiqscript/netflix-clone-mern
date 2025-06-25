@@ -19,7 +19,7 @@ const BrowseLayout = ({ children, style }) => {
         if (!user && !emailStorage && !tokenStorage) {
             navigate('/')
         }
-    }, [!user, !emailStorage, !tokenStorage, navigate])
+    }, [])
 
     if (loading) return <Loading />
 
