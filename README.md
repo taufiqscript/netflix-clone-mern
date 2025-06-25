@@ -2,12 +2,12 @@
 
 A clone of Netflix built using the MERN stack (MongoDB, Express, React, Node.js).
 
-## 🔧 Features
+## 🚀 Features
 - User authentication
-- Browse movies and TV shows
+- Browse trending movies (TMDB API)
 - Add to favorites
-- Watch trailer (via YouTube API)
-- Responsive UI
+- Responsive UI (TailwindCSS)
+- Trailer preview
 
 ## 🚀 Tech Stack
 - React
