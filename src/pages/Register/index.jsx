@@ -23,6 +23,7 @@ const Register = () => {
 
     const handleSignUp = async (e) => {
         e.preventDefault()
+        console.log("👉 BASE_URL_EXPRESS:", import.meta.env.VITE_BASE_URL_EXPRESS)
         try {
             setIsSubmit(true)
             setLoading(true)
