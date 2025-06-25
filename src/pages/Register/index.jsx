@@ -29,7 +29,7 @@ const Register = () => {
             const register = await createUserWithEmailAndPassword(auth, email, password)
             if (register) {
 
-                const addNewUser = await apiInstanceExpress.post("sign-up", { email, password })
+                const addNewUser = await apiInstanceExpress.post("/sign-up", { email, password })
 
                 if (addNewUser.status !== 201) return setNotifMessage('Register Gagal!')
                 setNotifMessage("Register Berhasil")
