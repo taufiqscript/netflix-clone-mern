@@ -1,4 +1,3 @@
-// import DefaultLayout from '../../components/layouts/DefaultLayout'
 import { JUMBOTRON_IMAGE } from '../../constans/listAsset'
 import { GoChevronLeft } from 'react-icons/go'
 import { useNavigate } from 'react-router-dom'
@@ -8,6 +7,7 @@ import { auth } from '../../utils/firebase'
 import { signInWithEmailAndPassword, getIdToken } from 'firebase/auth'
 import { apiInstanceExpress } from '../../utils/apiInstance'
 import { useState } from 'react'
+import DefaultLayout from '../../components/layouts/DefaultLayout'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -57,7 +57,7 @@ const Login = () => {
     }
 
     return (
-        <>
+        <DefaultLayout>
             <div className='relative'>
                 <img src={JUMBOTRON_IMAGE}
                     className='relative w-full h-screen object-cover opacity-60'
@@ -113,7 +113,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-        </>
+        </DefaultLayout>
     )
 }
 
