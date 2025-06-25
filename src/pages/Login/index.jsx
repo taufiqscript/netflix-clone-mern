@@ -46,7 +46,6 @@ const Login = () => {
                     setLoading(true)
                     setTimeout(() => {
                         setLoading(false)
-                        // navigate('/browse')
                     }, 1000)
                 }
             }
