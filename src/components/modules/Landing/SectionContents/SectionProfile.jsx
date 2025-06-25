@@ -21,7 +21,7 @@ const SectionProfile = () => {
                 render={(item, index) => (
                     <div
                         key={index}
-                        className='text-white'
+                        className='relative text-white'
                     >
                         <h3 className='text-5xl font-black'>{item.title}</h3>
                         <p className='text-xl mt-4'>{item.desc}</p>

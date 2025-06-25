@@ -1,50 +1,35 @@
-# 🎬 Netflix Clone - MERN Stack
+# Netflix Clone (MERN Stack)
 
-A Netflix-inspired movie streaming application built with the MERN stack. This project includes essential streaming app features such as authentication, browsing movies, watching trailers, and managing favorites.
+A clone of Netflix built using the MERN stack (MongoDB, Express, React, Node.js).
 
-## 🚀 Features
+## 🔧 Features
+- User authentication
+- Browse movies and TV shows
+- Add to favorites
+- Watch trailer (via YouTube API)
+- Responsive UI
 
-- 🔐 User Authentication (Login & Register)
-- 🎥 Browse Movies & TV Shows (TMDB API)
-- ⭐ Add/Remove from Favorites
-- 📺 Watch Trailers via YouTube
-- 🌙 Responsive UI with TailwindCSS
-- 📁 Environment Config via `.env` (not included in repo)
-
-## 🧰 Tech Stack
-
-- **Frontend**: React.js, TailwindCSS, Vite
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Authentication**: Firebase / JWT (optional)
-- **API**: TMDB (The Movie Database), YouTube API
+## 🚀 Tech Stack
+- React
+- Node.js + Express
+- MongoDB
+- Firebase / JWT (for Auth)
+- TailwindCSS / Styled Components
 
 ## 📸 Screenshots
+![Screenshot1](link-to-screenshot1)
+![Screenshot2](link-to-screenshot2)
 
-> *Tambahkan screenshot di sini setelah deploy*
-
-## 🌐 Live Demo
-
-🔗 [https://netflix-clone-demo.vercel.app](https://netflix-clone-demo.vercel.app)  
-*(Silakan update setelah deploy)*
+## 🔗 Live Demo
+netflix-clone-mern-sage.vercel.app
 
 ## 🧑‍💻 Author
-- GitHub: [@taufiqscript](https://github.com/taufiqscript)
-- LinkedIn: [linkedin.com/in/taufiqurrahman](#)
+- GitHub: [taufiqscript](https://github.com/taufiqscript/netflix-clone-mern)
+- LinkedIn: [www.linkedin.com/in/taufiq-rahman-98a322356]
 
-## 📦 Installation (Local Setup)
-
+## 📂 How to Run Locally
 ```bash
-# 1. Clone the repository
 git clone https://github.com/taufiqscript/netflix-clone-mern.git
 cd netflix-clone-mern
-
-# 2. Install dependencies
 npm install
-
-# 3. Create .env file
-# Add TMDB_API_KEY, backend URL, etc.
-
-# 4. Run the app
 npm run dev
-
