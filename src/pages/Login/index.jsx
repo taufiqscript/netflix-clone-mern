@@ -32,6 +32,11 @@ const Login = () => {
                 setTokenStorage(token)
                 setEmailStorage(login.user.email)
 
+                console.log("📡 Sending to backend:", {
+                    email,
+                    token
+                });
+
                 const user = await apiInstanceExpress.post("/sign-in", {
                     email,
                     token
@@ -41,7 +46,7 @@ const Login = () => {
                     setLoading(true)
                     setTimeout(() => {
                         setLoading(false)
-                        navigate('/browse')
+                        // navigate('/browse')
                     }, 1000)
                 }
             }
