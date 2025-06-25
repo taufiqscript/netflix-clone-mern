@@ -3,19 +3,33 @@ import { auth } from '../../../../utils/firebase'
 import { useNavigate } from 'react-router-dom'
 import { useAtom } from 'jotai'
 import { emailStorageAtom, tokenStorageAtom } from '../../../../jotai/atoms'
+import { apiInstanceExpress } from "../../../../utils/apiInstance"
 
 const AccountMenu = () => {
     const navigate = useNavigate()
 
     const [emailStorage, setEmailStorage] = useAtom(emailStorageAtom)
-    const [, setTokenStorage] = useAtom(tokenStorageAtom)
+    const [tokenStorage, setTokenStorage] = useAtom(tokenStorageAtom)
 
-    const handleSignOut = () => {
-        const logout = signOut(auth)
-        if (logout) {
-            setEmailStorage(null)
-            setTokenStorage(null)
-            navigate('/')
+    const handleSignOut = async () => {
+        try {
+            const logout = signOut(auth)
+            if (logout) {
+                const userLogout = await apiInstanceExpress.delete("sign-out", {
+                    data: {
+                        email: emailStorage,
+                        token: tokenStorage
+                    }
+                })
+
+                if (userLogout.status !== 204) return alert('sign-out gagal!')
+
+                setEmailStorage(null)
+                setTokenStorage(null)
+                navigate('/')
+            }
+        } catch (error) {
+            console.log(error)
         }
     }
 
