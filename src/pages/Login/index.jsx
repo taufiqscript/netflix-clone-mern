@@ -34,7 +34,6 @@ const Login = () => {
 
                 const user = await apiInstanceExpress.post("/sign-in", {
                     email,
-                    password,
                     token
                 })
 
