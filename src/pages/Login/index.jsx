@@ -29,7 +29,7 @@ const Login = () => {
                 const token = await getIdToken(login.user)
                 setTokenStorage(token)
                 setEmailStorage(login.user.email)                  
-                const user = await apiInstanceExpress.post("sign-in", {
+                const user = await apiInstanceExpress.post("/sign-in", {
                     email,
                     password,
                     token
