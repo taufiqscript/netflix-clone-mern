@@ -1,0 +1,24 @@
+import { atom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
+
+export const languageAtom = atomWithStorage("language", "id")
+export const emailStorageAtom = atomWithStorage("email", null)
+export const tokenStorageAtom = atomWithStorage("token", null)
+export const moviesTypeStateStorage = atomWithStorage("movies type", null)
+export const moviesTypeTrendingStorage = atomWithStorage("moives type trending", null)
+export const timeWindowStorage = atomWithStorage("time", null)
+
+export const emailAtom = atom(null)
+export const passwordAtom = atom(null)
+export const isOpenModalAtom = atom(false)
+export const idMovieDetailAtom = atom(null)
+export const idMovieDetailTrendingAtom = atom(null)
+export const idMovieTrendingAtom = atom(null)
+export const searchMoviesAtom = atom(null)
+export const isFetchingAtom = atom(false)
+export const isFavoritedAtom = atom(false)
+export const timeAtom = atom("day")
+export const moviesTypeAtom = atom("all")
+export const sourcePathAtom = atom("")
+export const saveMovieDataAtom = atom([])
+export const refreshFetchAtom = atom(false)
