@@ -21,7 +21,7 @@ A clone of Netflix built using the MERN stack (MongoDB, Express, React, Node.js)
 ![Screenshot2](link-to-screenshot2)
 
 ## 🔗 Live Demo
-netflix-clone-mern-sage.vercel.app
+netflix-clone-lyart-five-36.vercel.app
 
 ## 🧑‍💻 Author
 - GitHub: [taufiqscript](https://github.com/taufiqscript/netflix-clone-mern)
