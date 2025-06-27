@@ -17,8 +17,8 @@ const SectionEnjoy = () => {
                     <div
                         className='text-white'
                         key={index}>
-                        <h3 className='text-5xl font-black'>{item.title}</h3>
-                        <p className='text-xl mt-4'>{item.desc}</p>
+                        <h3 className='text-xl sm:text-5xl font-black'>{item.title}</h3>
+                        <p className='text-sm sm:text-xl mt-1 sm:mt-4'>{item.desc}</p>
                     </div>
 
                 )}

@@ -24,7 +24,7 @@ const Jumbotron = () => {
         const fetchJumbotron = async () => {
             try {
                 const movie = await getMoviesByType({ moviesType: "popular" })
-                const jumboMovie = movie[4]
+                const jumboMovie = movie[0]
                 setJumbotronMovie(jumboMovie)
                 setIdMovie(jumboMovie.id)
 

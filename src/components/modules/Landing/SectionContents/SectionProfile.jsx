@@ -14,7 +14,6 @@ const SectionProfile = () => {
         <SectionLayout>
             <img
                 src={PROFILE_KIDS_IMAGE}
-                className='max-w-xl mx-auto'
             />
             <EachUtils
                 of={language == "en" ? LIST_CONTENT_4_EN : LIST_CONTENT_4_ID}
@@ -23,8 +22,8 @@ const SectionProfile = () => {
                         key={index}
                         className='relative text-white'
                     >
-                        <h3 className='text-5xl font-black'>{item.title}</h3>
-                        <p className='text-xl mt-4'>{item.desc}</p>
+                        <h3 className='text-xl sm:text-5xl font-black'>{item.title}</h3>
+                        <p className='text-sm sm:text-xl mt-1 sm:mt-4'>{item.desc}</p>
                     </div>
                 )}
             />

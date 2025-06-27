@@ -19,10 +19,10 @@ const Jumbotron = () => {
                     render={(item, index) => (
                         <div
                             key={index}
-                            className='flex flex-col gap-4 text-white'
+                            className='flex flex-col sm:gap-4 text-white'
                         >
-                            <h3 className='text-5xl font-black'>{item.title}</h3>
-                            <p className='text-lg'>{item.desc}</p>
+                            <h3 className='text-xl sm:text-5xl font-black'>{item.title}</h3>
+                            <p className='text-sm sm:text-lg'>{item.desc}</p>
                         </div>
                     )}
                 />

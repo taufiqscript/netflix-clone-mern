@@ -1,4 +1,3 @@
-import React from 'react'
 import SectionLayout from '../../../layouts/SectionLayout'
 import EachUtils from '../../../../utils/EachUtils'
 import { LIST_CONTENT_3_EN, LIST_CONTENT_3_ID } from '../../../../constans/listContent'
@@ -18,12 +17,12 @@ const SectionWatch = () => {
                         key={index}
                         className='text-white'
                     >
-                        <h3 className='text-5xl font-black'>{item.title}</h3>
-                        <p className='text-xl mt-4'>{item.desc}</p>
+                        <h3 className='text-xl sm:text-5xl font-black'>{item.title}</h3>
+                        <p className='text-sm sm:text-xl mt-1 sm:mt-4'>{item.desc}</p>
                     </div>
                 )}
             />
-            <div className='relative'>
+            <div className='relative max-w-xl mx-auto'>
                 <img src={WATCH_DEVICE_IMAGE} className='relative z-10' />
                 <div className='absolute top-10 left-1/2 -translate-x-1/2 w-[60%]'>
                     <video autoPlay muted loop>

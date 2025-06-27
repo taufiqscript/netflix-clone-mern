@@ -25,19 +25,19 @@ const InputMembersip = () => {
                         key={index}
                         className='flex flex-col gap-3'
                     >
-                        <h3 className='text-xl'>{item.title}</h3>
+                        <h3 className='text-sm sm:text-xl'>{item.title}</h3>
                         <div className='relative sm:flex gap-2 justify-center w-full max-w-2xl mx-auto'>
                             <input
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder={item.labelInput}
-                                className='bg-black/50 p-3 rounded-md w-full peer placeholder-transparent border border-white/50 z-10'
+                                className='bg-black/50 p-3 rounded-md w-[90%] sm:w-full peer placeholder-transparent border border-white/50 z-10'
                             />
                             <label
-                                className='absolute top-0 left-3 peer-placeholder-shown:top-4 peer-focus:top-[1px] peer-focus:text-sm transition-all duration-200 ease-in-out -z-10'
+                                className='absolute top-0 left-6 sm:left-3 peer-placeholder-shown:top-3.5 peer-placeholder-shown:sm:top-4 peer-focus:top-[1px] peer-focus:sm:top-[1px] peer-focus:sm:text-sm transition-all duration-200 ease-in-out -z-10 text-sm peer-focus:text-xs sm:text-lg'
                             >
                                 {item.labelInput}
                             </label>
-                            <DefaultButton text={item.btnSubmit} styles={"w-[220px] flex justify-center items-center text-xl py-4 px-2 mt-2 sm:mt-0 m-auto"} isArrowIcon={true}
+                            <DefaultButton text={item.btnSubmit} styles={"w-auto sm:w-[220px] flex justify-center items-center text-sm sm:text-xl py-1 sm:py-4 px-2 sm:px-2 mt-2 sm:mt-0 m-auto"} isArrowIcon={true}
                                 onClick={handleEmail}
                             />
                         </div>

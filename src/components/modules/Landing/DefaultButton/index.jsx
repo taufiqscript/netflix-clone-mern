@@ -7,7 +7,7 @@ const DefaultButton = ({
     isArrowIcon = false
 }) => {
     return (
-        <button onClick={onClick} className={`bg-red-600 hover:bg-red-700 transition-all px-3 py-1 cursor-pointer font-bold rounded-md ${styles}`}>
+        <button onClick={onClick} className={`bg-red-600 hover:bg-red-700 transition-all cursor-pointer font-bold rounded-md ${styles}`}>
             {text}
             {isArrowIcon && (
                 <svg

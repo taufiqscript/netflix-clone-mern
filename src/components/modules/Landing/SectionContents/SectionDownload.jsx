@@ -17,12 +17,12 @@ const SectionDownload = () => {
                     src={DOWNLOAD_PHONE_IMAGE}
                     className='relative'
                 />
-                <div className='absolute bottom-6 left-1/2 -translate-x-1/2 bg-black w-[60%] flex items-center p-2 gap-2 rounded-xl border border-white/50'>
+                <div className='absolute bottom-6 left-1/2 -translate-x-1/2 bg-black w-[60%] h-[60px] sm:h-[100px] flex items-center p-2 gap-2 rounded-xl border border-white/50'>
                     <img
                         src={DOWNLOAD_COVER_IMAGE}
-                        className='max-h-[80px]'
+                        className='h-[45px] sm:h-[80px] max-h-[80px]'
                     />
-                    <div>
+                    <div className='text-sm sm:text-lg text-left'>
                         <h3>Stranger Things</h3>
                         <p className='text-blue-500'>Downloading...</p>
                     </div>
@@ -35,8 +35,8 @@ const SectionDownload = () => {
                         key={index}
                         className='text-white'
                     >
-                        <h3 className='text-5xl font-black'>{item.title}</h3>
-                        <p className='text-xl mt-4'>{item.desc}</p>
+                        <h3 className='text-xl sm:text-5xl font-black'>{item.title}</h3>
+                        <p className='text-sm sm:text-xl mt-1 sm:mt-4'>{item.desc}</p>
                     </div>
                 )}
             />

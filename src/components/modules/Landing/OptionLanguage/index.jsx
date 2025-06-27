@@ -1,4 +1,3 @@
-import React from 'react'
 import EachUtils from '../../../../utils/EachUtils'
 import { LIST_LANGUAGE } from '../../../../constans/listLanguage'
 import { useAtom } from 'jotai'
@@ -13,7 +12,7 @@ const OptionLanguage = () => {
 
     return (
         <div className='relative'>
-            <div className='absolute top-3 left-1.5'>
+            <div className='absolute top-1.5 sm:top-3 left-1.5'>
                 <svg
                     width="16"
                     height="16"
@@ -38,7 +37,7 @@ const OptionLanguage = () => {
                 <select
                     onChange={handleSelect}
                     value={language}
-                    className='bg-black/40 border border-white/50 rounded py-2 px-4 pl-5 w-[230px]'>
+                    className='bg-black/40 border border-white/50 rounded sm:py-2 py-1 px-4 pl-5 w-[135px] sm:w-[230px] text-xs'>
                     <EachUtils of={LIST_LANGUAGE}
                         render={(item, index) => (
                             <option
