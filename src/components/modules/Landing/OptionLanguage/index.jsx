@@ -37,7 +37,7 @@ const OptionLanguage = () => {
                 <select
                     onChange={handleSelect}
                     value={language}
-                    className='bg-black/40 border border-white/50 rounded sm:py-2 py-1 px-4 pl-5 w-[135px] sm:w-[230px] text-xs'>
+                    className='bg-black/40 border border-white/50 rounded sm:py-2 py-1 px-4 pl-5 w-[135px] sm:w-[230px] text-xs sm:text-lg'>
                     <EachUtils of={LIST_LANGUAGE}
                         render={(item, index) => (
                             <option

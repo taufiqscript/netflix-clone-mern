@@ -11,7 +11,7 @@ const Navbar = () => {
                 <img src='/netflix-logo-icon-dea-afrizal.png' alt='netflix-logo'
                     className='h-[40px] sm:h-[100px] sm:w-[160px] w-[80px]'
                 />
-                <div className='flex gap-2 items-center sm:block'>
+                <div className='flex gap-2 items-center'>
                     <OptionLanguage />
                     <DefaultButton
                         text={"Sign-In"}
