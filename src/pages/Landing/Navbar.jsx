@@ -15,7 +15,7 @@ const Navbar = () => {
                     <OptionLanguage />
                     <DefaultButton
                         text={"Sign-In"}
-                        styles={"text-xs px-2 py-1 sm:px-4 sm:py-2"}
+                        styles={"text-xs sm:text-lg px-2 py-1 sm:px-4 sm:py-2"}
                         onClick={() => navigate("/login")}
                     />
                 </div>
