@@ -11,7 +11,7 @@ const Jumbotron = () => {
     return (
         <div className='relative w-full'>
             <img src={JUMBOTRON_IMAGE} alt=''
-                className='absolute inset-0 w-full h-[700px] max-h-[700px] object-cover opacity-60'
+                className='absolute inset-0 w-full h-[500px] sm:h-[700px] max-h-[700px] object-cover opacity-60'
             />
             <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col text-center w-full max-w-4xl px-8'>
                 <EachUtils
@@ -28,7 +28,7 @@ const Jumbotron = () => {
                 />
                 <InputMembersip />
             </div>
-            <div className='w-full h-[700px]' />
+            <div className='w-full h-[500px] sm:h-[700px]' />
         </div>
     )
 }
