@@ -13,9 +13,9 @@ const Notify = ({ message, style, onClose }) => {
     if (!message) return null
 
     return (
-        <div className="relative z-50">
+        <div className="relative z-50 ">
             <div className={`toast toast-center ${style}`}>
-                <div className="alert bg-black text-white">
+                <div className="alert bg-black text-white text-xs text-center">
                     <span>{message}</span>
                 </div>
             </div>
