@@ -45,20 +45,22 @@ const Jumbotron = () => {
     }
 
     return (
-        <div className="relative h-[610px]">
+        <div className="relative h-[400px] sm:h-[610px]">
             {videoUrl && (
                 <>
+                    <div className="h-[500px] sm:h-[800px]">
                     <ReactPlayer
                         url={`https://youtube.com/watch?v=${videoUrl}`}
                         playing={true}
                         width={"100%"}
-                        height={"800px"}
+                            height={"100%"}
                         loop={true}
                         muted={isMute}
                         controls={false}
                     />
-                    <div className="absolute top-1/2 -translate-y-1/2 left-8 text-white max-w-xl">
-                        <h3 className="sm:text-5xl text-2xl font-black max-w-xs sm:max-w-xl">{jumbotronMovie?.title}</h3>
+                    </div>
+                    <div className="absolute top-1/2 -translate-y-1/2 left-8 text-white max-w-xl w-65 sm:w-full">
+                        <h3 className="sm:text-5xl text-xl font-black">{jumbotronMovie?.title}</h3>
                         <>
                             <p
                                 className={`block sm:hidden text-md`}>
@@ -69,11 +71,11 @@ const Jumbotron = () => {
                                 {handleOverview(jumbotronMovie.overview, 30)}
                             </p>
                         </>
-                        <div className="flex items-center gap-3 mt-4">
+                        <div className="flex items-center gap-1.5 sm:gap-3 mt-4">
                             <button
                                 onClick={() => navigate(`/watch/${videoUrl}`)}
-                                className="bg-slate-200 px-4 py-2 rounded-xl text-black font-semibold cursor-pointer flex items-center gap-1 hover:bg-gray-300 transition-all">
-                                <GoPlay size={20} />
+                                className="bg-slate-200 px-2 py-1 sm:px-4 sm:py-2 rounded-xl text-sm text-black font-semibold cursor-pointer flex items-center gap-1 hover:bg-gray-300 transition-all">
+                                <GoPlay className="text-[16px] sm:text-[20px]" />
                                 Play
                             </button>
                             <button
@@ -81,11 +83,11 @@ const Jumbotron = () => {
                                     setIdMovieDetail(idMovie)
                                     setIsOpenModal(true)
                                 }}
-                                className="bg-stone-600/80 px-4 py-2 rounded-xl font-semibold cursor-pointer">More Detail</button>
+                                className="bg-stone-600/80 px-2 py-1 sm:px-4 sm:py-2 rounded-xl text-sm font-semibold cursor-pointer">More Detail</button>
                             <div
                                 onClick={() => setIsMute(!isMute)}
                                 className="border rounded-full p-1 cursor-pointer border-2 hover:text-gray-200 transition-all">
-                                {isMute ? <GoMute size={20} /> : <GoUnmute size={20} />}
+                                {isMute ? <GoMute className="text-[14px] sm:text-[20px]" /> : <GoUnmute className="text-[14px] sm:text-[20px]" />}
                             </div>
                         </div>
                     </div>

@@ -141,7 +141,7 @@ const Modal = () => {
                     }} /> : null}
                     <div className='relative modal-box max-w-screen-md m-auto w-full max-h-screen-md p-0'>
                         <div className='relative'>
-                            <div className='w-full h-[90vh]'>
+                            <div className='w-full h-[60vh] sm:h-[90vh]'>
                                 {videoUrlTrending && (
                                     <ReactPlayer
                                         url={`https://youtube.com/watch?v=${videoUrlTrending}`}
@@ -160,27 +160,27 @@ const Modal = () => {
                                     setIdMovieDetailTrending(null)
                                     setData(null)
                                 }}
-                                className='absolute top-2 right-2 text-xl text-white rounded-full hover:bg-red-500 p-1 transition-all'>
+                                className='absolute top-2 right-2 text-md sm:text-xl text-white rounded-full hover:bg-red-500 p-1 transition-all'>
                                 <MdClose />
                             </button>
-                            <div className='absolute top-1/2 -translate-y-1/2 left-8'>
-                                <h3 className='text-4xl max-w-sm font-black text-white'>{!movieDetailTrending.title ? movieDetailTrending.name : movieDetailTrending.title}</h3>
-                                <div className='flex gap-3 mt-2'>
+                            <div className='absolute top-1/2 -translate-y-1/2 left-4 sm:left-8'>
+                                <h3 className='text-xl sm:text-4xl max-w-48 sm:max-w-sm font-black text-white'>{!movieDetailTrending.title ? movieDetailTrending.name : movieDetailTrending.title}</h3>
+                                <div className='flex gap-1 sm:gap-3 mt-2'>
                                     <button
                                         onClick={() => navigate(`/watch/${videoUrlTrending}`)}
-                                        className='bg-gray-200 px-4 py-2 flex gap-1 hover:bg-gray-300 transition-all text-black font-bold rounded-xl items-center cursor-pointer'>
-                                        <GoPlay size={24} />
+                                        className='bg-gray-200 px-2 py-1 sm:px-4 sm:py-2 flex gap-1 hover:bg-gray-300 transition-all text-sm sm:text-lg text-black font-bold rounded-xl items-center cursor-pointer'>
+                                        <GoPlay className='text-[18px] sm:text-[24px]' />
                                         Play
                                     </button>
                                     <button
                                         onClick={isFavorited ? handleRemoveFavoriteMovie : handleAddFavoriteMovie}
                                         className='text-white cursor-pointer hover:text-gray-200 transition-all'>
-                                        {isFavorited ? <GoTrash size={32} /> : <GoPlusCircle size={32} />}
+                                        {isFavorited ? <GoTrash className='text-[24px] sm:text-[32px]' /> : <GoPlusCircle className='text-[24px] sm:text-[32px]' />}
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div className='grid grid-cols-2 p-2 gap-4'>
+                        <div className='grid grid-cols-2 p-2 gap-4 text-sm sm:text-lg'>
                             <div className='flex flex-col gap-1'>
                                 <div className='flex gap-2'>
                                     <p>{!movieDetailTrending.release_date ? movieDetailTrending.first_air_date : movieDetailTrending.release_date}</p>
@@ -214,7 +214,7 @@ const Modal = () => {
                 }} /> : null}
                 <div className='relative modal-box max-w-screen-md m-auto w-full max-h-screen-md p-0'>
                     <div className='relative'>
-                        <div className='w-full h-[90vh]'>
+                        <div className='w-full h-[60vh] sm:h-[90vh]'>
                             <ReactPlayer
                                 url={`https://youtube.com/watch?v=${sourceType === "trending" && trendingPath ? videoUrlTrending : videoUrl}`}
                                 playing={true}
@@ -232,12 +232,12 @@ const Modal = () => {
                                 setIdMovieDetailTrending(null)
                                 setData(null)
                             }}
-                            className='absolute top-2 right-2 text-xl text-white rounded-full hover:bg-red-500 p-1 transition-all'>
+                            className='absolute top-2 right-2 text-md sm:text-xl text-white rounded-full hover:bg-red-500 p-1 transition-all'>
                             <MdClose />
                         </button>
-                        <div className='absolute top-1/2 -translate-y-1/2 left-8'>
-                            <h3 className='text-4xl max-w-sm font-black text-white'>{sourceType === "trending" && trendingPath ? movieDetailTrending?.title || movieDetailTrending?.name : movieDetail?.title}</h3>
-                            <div className='flex gap-3 mt-2'>
+                        <div className='absolute top-1/2 -translate-y-1/2 left-4 sm:left-8'>
+                            <h3 className='text-xl sm:text-4xl max-w-48 sm:max-w-sm font-black text-white'>{sourceType === "trending" && trendingPath ? movieDetailTrending?.title || movieDetailTrending?.name : movieDetail?.title}</h3>
+                            <div className='flex gap-1 sm:gap-3 mt-2'>
                                 <button
                                     onClick={() => {
                                         navigate(`/watch/${sourceType === "trending" && trendingPath ? videoUrlTrending : videoUrl}`)
@@ -246,19 +246,19 @@ const Modal = () => {
                                         setIdMovieDetailTrending(null)
                                         setSourcePath(null)
                                     }}
-                                    className='bg-gray-200 px-4 py-2 flex gap-1 hover:bg-gray-300 transition-all text-black font-bold rounded-xl items-center cursor-pointer'>
-                                    <GoPlay size={24} />
+                                    className='bg-gray-200 px-2 py-1 sm:px-4 sm:py-2 flex gap-1 hover:bg-gray-300 transition-all text-black text-sm sm:text-lg font-bold rounded-xl items-center cursor-pointer'>
+                                    <GoPlay className='text-[18px] sm:text-[24px]' />
                                     Play
                                 </button>
                                 <button
                                     onClick={isFavorited ? handleRemoveFavoriteMovie : null}
                                     className='text-white cursor-pointer hover:text-gray-200 transition-all'>
-                                    {isFavorited ? <GoTrash size={32} /> : null}
+                                    {isFavorited ? <GoTrash className='text-[24px] sm:text-[32px]' /> : null}
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className='grid grid-cols-2 p-2 gap-4'>
+                    <div className='grid grid-cols-2 p-2 gap-4 text-sm sm:text-lg'>
                         <div className='flex flex-col gap-1'>
                             <div className='flex gap-2'>
                                 <p>
@@ -299,7 +299,7 @@ const Modal = () => {
                 }} /> : null}
                 <div className='relative modal-box max-w-screen-md m-auto w-full max-h-screen-md p-0'>
                     <div className='relative'>
-                        <div className='w-full h-[90vh]'>
+                        <div className='w-full h-[60vh] sm:h-[90vh]'>
                             {videoUrl && (
                                 <ReactPlayer
                                     url={`https://youtube.com/watch?v=${videoUrl}`}
@@ -318,27 +318,27 @@ const Modal = () => {
                                 setIdMovieDetail(null)
                                 setData(null)
                             }}
-                            className='absolute top-2 right-2 text-xl text-white rounded-full hover:bg-red-500 p-1 transition-all'>
+                            className='absolute top-2 right-2 text-md sm:text-xl text-white rounded-full hover:bg-red-500 p-1 transition-all'>
                             <MdClose />
                         </button>
-                        <div className='absolute top-1/2 -translate-y-1/2 left-8'>
-                            <h3 className='text-4xl max-w-sm font-black text-white'>{movieDetail.title}</h3>
-                            <div className='flex gap-3 mt-2'>
+                        <div className='absolute top-1/2 -translate-y-1/2 left-4 sm:left-8'>
+                            <h3 className='text-xl sm:text-4xl max-w-48 sm:max-w-sm font-black text-white'>{movieDetail.title}</h3>
+                            <div className='flex gap-1 sm:gap-3 mt-2'>
                                 <button
                                     onClick={() => navigate(`/watch/${videoUrl}`)}
-                                    className='bg-gray-200 px-4 py-2 flex gap-1 hover:bg-gray-300 transition-all text-black font-bold rounded-xl items-center cursor-pointer'>
-                                    <GoPlay size={24} />
+                                    className='bg-gray-200 px-2 py-1 sm:px-4 sm:py-2 flex gap-1 hover:bg-gray-300 transition-all text-black font-bold rounded-xl text-sm items-center cursor-pointer'>
+                                    <GoPlay className='text-[18px] sm:text-24px' />
                                     Play
                                 </button>
                                 <button
                                     onClick={isFavorited ? handleRemoveFavoriteMovie : handleAddFavoriteMovie}
                                     className='text-white cursor-pointer hover:text-gray-200 transition-all'>
-                                    {isFavorited ? <GoTrash size={32} /> : <GoPlusCircle size={32} />}
+                                    {isFavorited ? <GoTrash className='text-[24px] sm:text-[32px]' /> : <GoPlusCircle className='text-[24px] sm:text-[32px]' />}
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className='grid grid-cols-2 p-2 gap-4'>
+                    <div className='grid grid-cols-2 p-2 gap-4 text-sm sm:text-lg'>
                         <div className='flex flex-col gap-1'>
                             <div className='flex gap-2'>
                                 <p>{movieDetail.release_date}</p>

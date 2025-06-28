@@ -24,7 +24,7 @@ const Watch = () => {
                 </div>
                 <div
                     onClick={() => navigate("/browse")}
-                    className='absolute top-28 left-6 border rounded-full border-2 cursor-pointer '>
+                    className='absolute top-28 left-3 sm:left-6 border rounded-full border-2 cursor-pointer '>
                     <GoChevronLeft size={32}
                         className='hover:scale-110 transition-all hover:text-white'
                     />

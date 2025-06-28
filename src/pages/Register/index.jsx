@@ -56,7 +56,7 @@ const Register = () => {
                 <img src={JUMBOTRON_IMAGE}
                     className='relative w-full h-screen object-cover opacity-60'
                 />
-                <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black w-full max-w-xl mx-auto p-8 rounded-xl'>
+                <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black w-full max-w-xl w-sm sm:w-xl mx-auto p-8 rounded-xl'>
                     <div className='mb-3 flex gap-1 items-center'>
                         <GoChevronLeft size={30}
                             className='cursor-pointer hover:text-white hover:scale-110 transition-all'

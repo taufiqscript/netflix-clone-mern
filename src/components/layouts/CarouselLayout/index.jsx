@@ -14,11 +14,11 @@ const CarouselLayout = ({ children }) => {
                 <button>
                     <GoChevronLeft size={32}
                         onClick={() => handleScroll(-500)}
-                        className='relative hover:bg-blue-400/60 transition-all h-72 w-10 z-40 m-auto'
+                        className='relative hover:bg-blue-400/60 transition-all h-40 sm:h-72 w-6 sm:w-10 z-40 m-auto'
                     />
                 </button>
                 <button>
-                    <GoChevronRight size={32} className='relative m-auto hover:bg-blue-400/60 transition-all h-72 w-10 z-40'
+                    <GoChevronRight size={32} className='relative m-auto hover:bg-blue-400/60 transition-all h-40 sm:h-72 w-6 sm:w-10 z-40'
                         onClick={() => handleScroll(500)}
                     />
                 </button>

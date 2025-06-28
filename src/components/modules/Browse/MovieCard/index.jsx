@@ -95,11 +95,18 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
 
     if (isFetching) return <Skeleton />
 
+    const handleTitle = (text, maxWord) => {
+        if (!text) return ""
+        const word = text.split(" ")
+        if (word.length <= maxWord) return text
+        return word.slice(0, maxWord).join(" ") + "..."
+    }
+
     if (url.pathname === `/favorite`) {
         return (
             <>
                 <div
-                    className='relative w-full h-72 overflow-hidden rounded-md'
+                    className='relative w-full h-40 sm:h-72 overflow-hidden rounded-md'
                     onMouseEnter={() => {
                         setIsHover(true)
                         if (sourceType === "trending" && trendingPath) {
@@ -131,30 +138,30 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
                             transition={{ ease: "easeInOut", duration: 0 }}
                             className='absolute top-0 left-0 w-full h-full'
                         >
-                            <div className='relative hover:scale-102 z-20 transition-all h-[180px]'>
+                            <div className='relative hover:scale-102 z-20 transition-all h-[85px] sm:h-[180px]'>
                                 <ReactPlayer
                                     url={`https://youtube.com/watch?v=${videoUrl || videoUrlTrending}`}
                                     playing={isHover}
                                     muted={true}
                                     width={"100%"}
-                                    height={"180px"}
+                                    height={"100%"}
                                     controls={false}
                                     loop={true}
                                 />
                             </div>
-                            <div className='relative max-h-48 h-[40%] bg-[#141414] p-2 rounded-b-md z-10 hover:z-40 overflow-y-scroll'>
+                            <div className='relative max-h-48 h-[60%] sm:h-[40%] bg-[#141414] p-1 sm:p-2 rounded-b-md z-10 hover:z-40 overflow-y-scroll'>
                                 <section>
                                     <div className='flex justify-between'>
                                         <div className='flex gap-1.5'>
                                             <button
                                                 onClick={() => navigate(`/watch/${videoUrl || videoUrlTrending}`)}
                                                 className='cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                                <GoPlay size={24} />
+                                                <GoPlay className='text-[18px] sm:text-[24px]' />
                                             </button>
                                             <button
                                                 onClick={isFavorited ? handleRemoveFavoriteMovie : handleAddFavoriteMovie}
                                                 className='cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                                {isFavorited ? <GoTrash size={24} /> : <GoPlusCircle size={24} />}
+                                                {isFavorited ? <GoTrash className='text-[18px] sm:text-[24px]' /> : <GoPlusCircle className='text-[18px] sm:text-[24px]' />}
                                             </button>
                                         </div>
                                         <div>
@@ -167,13 +174,13 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
                                                     setData(data)
                                                 }}
                                                 className='border rounded-full border-2 cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                                <GoChevronDown size={18} />
+                                                <GoChevronDown className='text-[12px] sm:text-[18px]' />
                                             </button>
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className='text-2xl font-semibold text-white'>{!data.title ? data.name : data.title}</h3>
-                                        <p className='text-yellow-400'>Popularity : <span className='text-yellow-400'>{data.popularity}</span>
+                                        <h3 className='text-xs sm:text-2xl font-semibold text-white'>{!data.title ? handleTitle(data.name, 3) : handleTitle(data.title, 3)}</h3>
+                                        <p className='text-yellow-400 text-[10px]'>Popularity : <span className='text-yellow-400'>{data.popularity}</span>
                                         </p>
                                     </div>
                                 </section>
@@ -186,7 +193,7 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
     } else if (url.pathname === `/trending/${moviesTypeTrending}/${timeWindow}`) {
         return (
             <div
-                className='relative w-full h-72 overflow-hidden rounded-md'
+                className='relative w-full h-40 sm:h-72 overflow-hidden rounded-md'
                 onMouseEnter={() => {
                     setIsHover(true)
                     setIdMovieTrending(data.id)
@@ -211,32 +218,32 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
                         transition={{ ease: "easeInOut", duration: 0 }}
                         className='absolute top-0 left-0 w-full h-full'
                     >
-                        <div className='relative hover:scale-102 z-20 transition-all h-[180px]'>
+                        <div className='relative hover:scale-102 z-20 transition-all h-[85px] sm:h-[180px]'>
                             {videoUrlTrending && (
                                 <ReactPlayer
                                     url={`https://youtube.com/watch?v=${videoUrlTrending}`}
                                     playing={isHover}
                                     muted={true}
                                     width={"100%"}
-                                    height={"180px"}
+                                    height={"100%"}
                                     controls={false}
                                     loop={true}
                                 />
                             )}
                         </div>
-                        <div className='relative max-h-48 h-[40%] bg-[#141414] p-2 rounded-b-md z-10 hover:z-40'>
+                        <div className='relative max-h-48 h-[60%] sm:h-[40%] bg-[#141414] p-1 sm:p-2 rounded-b-md z-10 hover:z-40'>
                             <section>
                                 <div className='flex justify-between'>
                                     <div className='flex gap-1.5'>
                                         <button
                                             onClick={() => navigate(`/watch/${videoUrlTrending}`)}
                                             className='cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                            <GoPlay size={24} />
+                                            <GoPlay className='text-[18px] sm:text-[24px]' />
                                         </button>
                                         <button
                                             onClick={isFavorited ? handleRemoveFavoriteMovie : handleAddFavoriteMovie}
                                             className='cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                            {isFavorited ? <GoTrash size={24} /> : <GoPlusCircle size={24} />}
+                                            {isFavorited ? <GoTrash className='text-[18px] sm:text-[24px]' /> : <GoPlusCircle className='text-[18px] sm:text-[24px]' />}
                                         </button>
                                     </div>
                                     <div>
@@ -247,13 +254,13 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
                                                 setData(data)
                                             }}
                                             className='border rounded-full border-2 cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                            <GoChevronDown size={18} />
+                                            <GoChevronDown className='text-[12px] sm:text-[18px]' />
                                         </button>
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className='text-2xl font-semibold text-white'>{!data.title ? data.name : data.title}</h3>
-                                    <p className='text-yellow-400'>Popularity : <span className='text-yellow-400'>{data.popularity}</span></p>
+                                    <h3 className='text-xs sm:text-2xl font-semibold text-white'>{!data.title ? handleTitle(data.name, 3) : handleTitle(data.title, 3)}</h3>
+                                    <p className='text-yellow-400 text-[10px] sm:text-lg'>Popularity : <span className='text-yellow-400'>{data.popularity}</span></p>
                                 </div>
                             </section>
                         </div>
@@ -264,7 +271,7 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
     } else {
         return (
             <div
-                className='relative w-full h-72 overflow-hidden rounded-md'
+                className='relative w-full h-40 sm:h-72 overflow-hidden rounded-md'
                 onMouseEnter={() => {
                     setIsHover(true)
                     setIdMovie(data.id)
@@ -289,32 +296,32 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
                         transition={{ ease: "easeInOut", duration: 0 }}
                         className='absolute top-0 left-0 w-full h-full'
                     >
-                        <div className='relative hover:scale-102 z-20 transition-all h-[180px]'>
+                        <div className='relative hover:scale-102 z-20 transition-all h-[85px] sm:h-[180px]'>
                             {videoUrl && (
                                 <ReactPlayer
                                     url={`https://youtube.com/watch?v=${videoUrl}`}
                                     playing={isHover}
                                     muted={true}
                                     width={"100%"}
-                                    height={"180px"}
+                                    height={"100%"}
                                     controls={false}
                                     loop={true}
                                 />
                             )}
                         </div>
-                        <div className='relative max-h-48 h-[40%] bg-[#141414] p-2 rounded-b-md z-10 hover:z-40'>
+                        <div className='relative max-h-48 h-[60%] sm:h-[40%] bg-[#141414] p-1 sm:p-2 rounded-b-md z-10 hover:z-40'>
                             <section>
                                 <div className='flex justify-between'>
                                     <div className='flex gap-1.5'>
                                         <button
                                             onClick={() => navigate(`/watch/${videoUrl}`)}
                                             className='cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                            <GoPlay size={24} />
+                                            <GoPlay className='text-[18px] sm:text-[24px]' />
                                         </button>
                                         <button
                                             onClick={isFavorited ? handleRemoveFavoriteMovie : handleAddFavoriteMovie}
                                             className='cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                            {isFavorited ? <GoTrash size={24} /> : <GoPlusCircle size={24} />}
+                                            {isFavorited ? <GoTrash className='text-[18px] sm:text-[24px]' /> : <GoPlusCircle className='text-[18px] sm:text-[24px]' />}
                                         </button>
                                     </div>
                                     <div>
@@ -325,13 +332,13 @@ const MovieCard = ({ data, setIsHover, isHover, idMovie, idMovieTrending, setIdM
                                                 setData(data)
                                             }}
                                             className='border rounded-full border-2 cursor-pointer text-white hover:text-gray-300 transition-all'>
-                                            <GoChevronDown size={18} />
+                                            <GoChevronDown className='text-[12px] sm:text-[18px]' />
                                         </button>
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className='text-2xl font-semibold text-white'>{!data.title ? data.name : data.title}</h3>
-                                    <p className='text-yellow-400'>Popularity : <span className='text-yellow-400'>{data.popularity}</span></p>
+                                    <h3 className='text-xs sm:text-2xl font-semibold text-white'>{!data.title ? handleTitle(data.name, 3) : handleTitle(data.title, 3)}</h3>
+                                    <p className='text-yellow-400 text-[10px] sm:text-lg'>Popularity : <span className='text-yellow-400'>{data.popularity}</span></p>
                                 </div>
                             </section>
                         </div>

@@ -2,7 +2,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import AccountMenu from '../../components/modules/Browse/AccountMenu'
 import SearchInput from '../../components/modules/Browse/SearchInput'
 import { useAtom } from 'jotai'
-import { moviesTypeStateStorage, moviesTypeTrendingStorage } from '../../jotai/atoms'
+import { isShowAtom, moviesTypeStateStorage, moviesTypeTrendingStorage } from '../../jotai/atoms'
 
 const Navbar = ({ style }) => {
     const navigate = useNavigate()
@@ -13,15 +13,17 @@ const Navbar = ({ style }) => {
     const [, setMoviesTypeState] = useAtom(moviesTypeStateStorage)
     const [, setMoviesTypeTrending] = useAtom(moviesTypeTrendingStorage)
 
+    const [isShow] = useAtom(isShowAtom)
+
     return (
         <header className={`w-full ${style}`}>
-            <nav className='flex justify-between py-2 px-4 items-center bg-[#1e1e1e] fixed z-50 w-full'>
-                <div className='flex items-center gap-4'>
-                    <img src='/netflix-logo-icon-dea-afrizal.png' width={120}
-                        className='cursor-pointer hover:scale-110 transition-all'
+            <nav className='flex justify-between py-2 px-1.5 sm:px-4 items-center bg-[#1e1e1e] fixed z-50 w-full'>
+                <div className='flex items-center gap-1.5 sm:gap-4'>
+                    <img src='/netflix-logo-icon-dea-afrizal.png'
+                        className='cursor-pointer hover:scale-110 w-[80px] sm:w-[120px] transition-all'
                         onClick={() => navigate("/browse")}
                     />
-                    <div className='sm:flex sm:gap-4 sm:block hidden'>
+                    <div className={`flex sm:flex gap-1.5 sm:gap-4 text-sm sm:text-lg ${isShow ? "hidden sm:block" : "block sm:block"}`}>
                         <a
                             className='text-white hover:text-gray-300 hover:underline transition-all'
                             href='/browse'
@@ -94,7 +96,6 @@ const Navbar = ({ style }) => {
                                 </li>
                             </ul>
                         </div>
-
                         <div className='dropdown dropdown-hover dropdown-bottom'>
                             <a
                                 tabIndex={0}
@@ -136,14 +137,13 @@ const Navbar = ({ style }) => {
                                 </li>
                             </ul>
                         </div>
-
                         <a
                             className='text-white hover:text-gray-300 hover:underline transition-all'
                             href='/favorite'
                         >My List</a>
                     </div>
                 </div>
-                <div className='flex gap-4 items-center'>
+                <div className='flex gap-1.5 sm:gap-4 items-center'>
                     <SearchInput />
                     <AccountMenu />
                 </div>

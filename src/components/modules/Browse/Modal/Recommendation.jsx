@@ -68,19 +68,20 @@ const Recommendation = () => {
     if (url.pathname === "/favorite") {
         return (
             <div className="p-2">
-                <h3 className="text-2xl font-bold text-white">Movies Recommendation</h3>
-                <section className='grid grid-cols-3 gap-2 mt-4'>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">Movies Recommendation</h3>
+                <section className='grid grid-cols-3 gap-2 mt-2 sm:mt-4'>
                     <EachUtils
                         of={sourceType === "trending" ? moviesRecommendationTrend : moviesRecommendation}
                         render={(item, index) => (
                             <div
                                 key={index}
+                                className='h-56 sm:h-105'
                             >
                                 <div
                                     className='relative'
                                 >
                                     <img src={import.meta.env.VITE_IMAGE_URL_TMDB_API + item.poster_path}
-                                        className='rounded-t-md h-52 w-full object-cover'
+                                        className='rounded-t-md h-30 sm:h-52 w-full object-cover'
                                     />
                                     <div className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
                                         <button
@@ -99,12 +100,12 @@ const Recommendation = () => {
                                                 setSourcePath(null)
                                             }}
                                             className='text-white hover:text-gray-200 transition-all cursor-pointer'>
-                                            <GoPlay size={44} />
+                                            <GoPlay className='text-[35px] sm:text-[44px]' />
                                         </button>
                                     </div>
                                 </div>
-                                <div className='bg-[#1e1e1e] h-full px-2 py-1 max-h-48 overflow-y-scroll rounded-b-md'>
-                                    <div className='flex gap-2'>
+                                <div className='bg-[#1e1e1e] sm:h-full px-1 sm:px-2 py-1 max-h-48 h-[40%] overflow-y-scroll rounded-b-md text-[10px] sm:text-lg'>
+                                    <div className='flex gap-2 text-[7.7px] sm:text-lg'>
                                         <p>{item?.release_date || item?.first_air_date}</p>
                                         {item?.runtime && <p className='text-yellow-400'>{item?.runtime} minutes</p>}
                                         {item?.vote_average && <p className='text-yellow-400'>{item?.vote_average} vote</p>}
@@ -122,19 +123,20 @@ const Recommendation = () => {
     } else if (url.pathname === `/trending/${moviesTypeTrending}/${timeWindow}`) {
         return (
             <div className="p-2">
-                <h3 className="text-2xl font-bold text-white">Movies Recommendation</h3>
-                <section className='grid grid-cols-3 gap-2 mt-4'>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">Movies Recommendation</h3>
+                <section className='grid grid-cols-3 gap-2 mt-2 sm:mt-4'>
                     <EachUtils
                         of={moviesRecommendationTrend}
                         render={(item, index) => (
                             <div
                                 key={index}
+                                className='h-58 sm:h-105'
                             >
                                 <div
                                     className='relative'
                                 >
                                     <img src={import.meta.env.VITE_IMAGE_URL_TMDB_API + item.poster_path}
-                                        className='rounded-t-md h-52 w-full object-cover'
+                                        className='rounded-t-md h-35 sm:h-52 w-full object-cover'
                                     />
                                     <div className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
                                         <button
@@ -147,12 +149,12 @@ const Recommendation = () => {
                                                 setIdMovieDetailTrending(null)
                                             }}
                                             className='text-white hover:text-gray-200 transition-all cursor-pointer'>
-                                            <GoPlay size={44} />
+                                            <GoPlay className='text-[35px] sm:text-[44px]' />
                                         </button>
                                     </div>
                                 </div>
-                                <div className='bg-[#1e1e1e] h-full px-2 py-1 max-h-48 overflow-y-scroll rounded-b-md'>
-                                    <div className='flex gap-2'>
+                                <div className='bg-[#1e1e1e] sm:h-full px-1 sm:px-2 py-1 max-h-48 h-[40%] overflow-y-scroll rounded-b-md text-xs sm:text-lg'>
+                                    <div className='flex gap-2 text-[7.5px] sm:text-lg'>
                                         <p>{!item.release_date ? item.first_air_date : item.release_date}</p>
                                         {item.runtime && <p className='text-yellow-400'>{item.runtime} minutes</p>}
                                         {item.vote_average && <p className='text-yellow-400'>{item.vote_average} vote</p>}
@@ -170,19 +172,20 @@ const Recommendation = () => {
     } else {
         return (
             <div className="p-2">
-                <h3 className="text-2xl font-bold text-white">Movies Recommendation</h3>
-                <section className='grid grid-cols-3 gap-2 mt-4'>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">Movies Recommendation</h3>
+                <section className='grid grid-cols-3 gap-2 mt-2 sm:mt-4'>
                     <EachUtils
                         of={moviesRecommendation}
                         render={(item, index) => (
                             <div
                                 key={index}
+                                className='h-58 sm:h-105'
                             >
                                 <div
                                     className='relative'
                                 >
                                     <img src={import.meta.env.VITE_IMAGE_URL_TMDB_API + item.poster_path}
-                                        className='rounded-t-md h-52 w-full object-cover'
+                                        className='rounded-t-md h-35 sm:h-52 w-full object-cover'
                                     />
                                     <div className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
                                         <button
@@ -195,12 +198,12 @@ const Recommendation = () => {
                                                 setIdMovieDetail(null)
                                             }}
                                             className='text-white hover:text-gray-200 transition-all cursor-pointer'>
-                                            <GoPlay size={44} />
+                                            <GoPlay className='text-[35px] sm:text-[44px]' />
                                         </button>
                                     </div>
                                 </div>
-                                <div className='bg-[#1e1e1e] h-full px-2 py-1 max-h-48 overflow-y-scroll rounded-b-md'>
-                                    <div className='flex gap-2'>
+                                <div className='bg-[#1e1e1e] h-[40%] sm:h-full px-1 sm:px-2 py-1 max-h-48 overflow-y-scroll rounded-b-md text-xs sm:text-lg'>
+                                    <div className='flex gap-2 text-[7.5px] sm:text-lg'>
                                         <p>{item.release_date}</p>
                                         <p className='text-yellow-400'>{item.vote_average} vote</p>
                                     </div>
@@ -215,100 +218,6 @@ const Recommendation = () => {
             </div>
         )
     }
-    // <>
-    //     {url.pathname === `/trending/${moviesTypeTrending}/${timeWindow}` ? (
-    // <div className="p-2">
-    //     <h3 className="text-2xl font-bold text-white">Movies Recommendation</h3>
-    //     <section className='grid grid-cols-3 gap-2 mt-4'>
-    //         <EachUtils
-    //             of={moviesRecommendationTrend}
-    //             render={(item, index) => (
-    //                 <div
-    //                     key={index}
-    //                 >
-    //                     <div
-    //                         className='relative'
-    //                     >
-    //                         <img src={import.meta.env.VITE_IMAGE_URL_TMDB_API + item.poster_path}
-    //                             className='rounded-t-md h-52 w-full object-cover'
-    //                         />
-    //                         <div className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
-    //                             <button
-    //                                 onMouseEnter={() => {
-    //                                     getVideoUrlTV({ moviesTypeTrending, movieId: item.id }).then(result => setVideoUrlTrending(result))
-    //                                 }}
-    //                                 onClick={() => {
-    //                                     navigate(`/watch/${videoUrlTrending}`)
-    //                                     setIsOpenModal(false)
-    //                                     setIdMovieDetailTrending(null)
-    //                                 }}
-    //                                 className='text-white hover:text-gray-200 transition-all cursor-pointer'>
-    //                                 <GoPlay size={44} />
-    //                             </button>
-    //                         </div>
-    //                     </div>
-    //                     <div className='bg-[#1e1e1e] h-full px-2 py-1 max-h-48 overflow-y-scroll rounded-b-md'>
-    //                         <div className='flex gap-2'>
-    //                             <p>{!item.release_date ? item.first_air_date : item.release_date}</p>
-    //                             {item.runtime && <p className='text-green-400'>{item.runtime} minutes</p>}
-    //                             {item.vote_average && <p className='text-green-400'>{item.vote_average} vote</p>}
-    //                         </div>
-    //                         <div>
-    //                             <p>{item.overview}</p>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             )}
-    //         />
-    //     </section >
-    // </div >
-    //     ) : (
-    // <div className="p-2">
-    //     <h3 className="text-2xl font-bold text-white">Movies Recommendation</h3>
-    //     <section className='grid grid-cols-3 gap-2 mt-4'>
-    //         <EachUtils
-    //             of={moviesRecommendation}
-    //             render={(item, index) => (
-    //                 <div
-    //                     key={index}
-    //                 >
-    //                     <div
-    //                         className='relative'
-    //                     >
-    //                         <img src={import.meta.env.VITE_IMAGE_URL_TMDB_API + item.poster_path}
-    //                             className='rounded-t-md h-52 w-full object-cover'
-    //                         />
-    //                         <div className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
-    //                             <button
-    //                                 onMouseEnter={() => {
-    //                                     getVideoUrl({ movie_id: item.id }).then(result => setVideoUrl(result))
-    //                                 }}
-    //                                 onClick={() => {
-    //                                     navigate(`/watch/${videoUrl}`)
-    //                                     setIsOpenModal(false)
-    //                                     setIdMovieDetail(null)
-    //                                 }}
-    //                                 className='text-white hover:text-gray-200 transition-all cursor-pointer'>
-    //                                 <GoPlay size={44} />
-    //                             </button>
-    //                         </div>
-    //                     </div>
-    //                     <div className='bg-[#1e1e1e] h-full px-2 py-1 max-h-48 overflow-y-scroll rounded-b-md'>
-    //                         <div className='flex gap-2'>
-    //                             <p>{item.release_date}</p>
-    //                             <p className='text-green-400'>{item.vote_average} vote</p>
-    //                         </div>
-    //                         <div>
-    //                             <p>{item.overview}</p>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             )}
-    //         />
-    //     </section>
-    // </div>
-    //     )}
-    // </>
 }
 
 export default Recommendation

@@ -35,7 +35,7 @@ const SearchMovies = () => {
     }
 
     return (
-        <div className='grid grid-cols-4 w-full gap-4 px-4 pt-24'>
+        <div className='grid grid-cols-3 sm:grid-cols-4 w-full gap-4 px-4 pt-14 sm:pt-24'>
             {isSubmit && <Notify message={notifMessage} style={"toast-middle"} onClose={() => {
                 setNotifMessage(null)
                 setIsSubmit(false)
@@ -44,7 +44,7 @@ const SearchMovies = () => {
                 of={url.pathname === `/trending/${moviesTypeTrending}/${timeWindow}` ? movieListTrending : movieList}
                 render={(item, index) => (
                     <div
-                        className='py-4 h-72'
+                        className='py-4 h-40 sm:h-72'
                         key={index}
                     ><MovieCard
                             data={item}
