@@ -21,10 +21,6 @@ A clone of Netflix built using the MERN stack (MongoDB, Express, React, Node.js)
 - Firebase / JWT (for Auth)
 - TailwindCSS / Styled Components
 
-## 📸 Screenshots
-![Screenshot1](link-to-screenshot1)
-![Screenshot2](link-to-screenshot2)
-
 ## 🔗 Live Demo
 - Link Demo: [https://netflix-clone-mern-eta.vercel.app]
 
